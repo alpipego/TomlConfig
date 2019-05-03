@@ -1,0 +1,21 @@
+{
+    "name": "alpipego/toml-config",
+    "description": "TOML adapter for hassankhan/config",
+    "type": "library",
+    "require": {
+        "hassankhan/config": "^2.0",
+        "yosymfony/toml": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+      "psr-4": {
+        "Alpipego\\TomlConfig\\": "src/"
+      }
+    },
+    "authors": [
+        {
+            "name": "Alex Goller",
+            "email": "alpipego@protonmail.com"
+        }
+    ]
+}
