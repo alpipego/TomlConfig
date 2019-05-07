@@ -73,11 +73,11 @@ class TomlConfig extends AbstractConfig
 				array_pop($levels);
 				$arr =& $data;
 				foreach ($levels as $level) {
-					$arr =& $data[$level];
 					if ( ! array_key_exists($level, $arr)) {
 						$levels = [array_pop($levels)];
 						continue;
 					}
+					$arr =& $data[$level];
 				}
 
 				$compoundKey = array_reduce($levels, function ($carry, $level) {
