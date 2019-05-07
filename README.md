@@ -1,6 +1,6 @@
 ## TOMLConfig
 
-Write your config in `.toml` files (https://github.com/toml-lang/toml) and use them in with https://github.com/hassankhan/config.
+Write your config in `.toml` files (https://github.com/toml-lang/toml) and use them with https://github.com/hassankhan/config.
 
 Toml Parser used: https://github.com/yosymfony/toml
 
