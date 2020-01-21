@@ -50,7 +50,7 @@ class TomlConfig extends AbstractConfig
 		array_walk($value, function ($value, $key) use ($envKey) {
 			$envKey .= '_' . $key;
 			if ( ! is_scalar($value)) {
-				return $this->setenv($envKey, $value);
+				return $this->setenv($envKey, $value ?? []);
 			}
 
 			$key = strtoupper(ltrim($envKey, '_'));
@@ -97,7 +97,7 @@ class TomlConfig extends AbstractConfig
 					$arr[$key] = $compound[$compoundKey] = str_replace($vars[0], $value, $values);
 				}
 
-				if ( ! array_key_exists($key, $arr)) {
+				if ( ! array_key_exists($key, (array)$arr)) {
 					$levels = [];
 				}
 
@@ -107,7 +107,7 @@ class TomlConfig extends AbstractConfig
 			foreach ($values as $key => $array) {
 				$levels[]     = $key;
 				$output[$key] = [];
-				$recursion($key, $array);
+				$recursion((string)$key, $array);
 			}
 		};
 
